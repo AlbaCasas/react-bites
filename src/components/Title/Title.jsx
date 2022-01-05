@@ -1,7 +1,9 @@
-const Title = ({ children, className }) => {
+const Title = ({ children, className = "", onClick }) => {
   return (
     <div>
-      <h1 className={`title ${className}`}>{children}</h1>
+      <h1 onClick={onClick} className={`title ${className}`}>
+        {children}
+      </h1>
     </div>
   );
 };

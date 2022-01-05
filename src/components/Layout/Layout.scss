@@ -10,6 +10,9 @@
     margin-bottom: 64px;
     width: 100vw;
   }
+  &__title {
+    cursor: pointer;
+  }
 
   &__icons {
     display: flex;

@@ -1,12 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Title from "../Title";
-import "../../index";
 
 const Layout = ({ children }) => {
+  const navigate = useNavigate();
+  const handleTitleClick = () => navigate("/");
   return (
     <div className="layout">
       <header className="layout__header">
-        <Title>🚀 React Challenges</Title>
+        <Title className="layout__title" onClick={handleTitleClick}>
+          🚀 React Challenges
+        </Title>
         <div className="layout__icons">
           <a
             href="https://github.com/AlbaCasas"

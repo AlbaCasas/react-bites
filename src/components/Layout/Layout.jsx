@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Title from "../Title";
-import "./Layout.scss";
+import "../../index";
 
 const Layout = ({ children }) => {
   return (

@@ -1,8 +1,13 @@
 import Layout from "./components/Layout";
+import Likes from "./views/Likes";
 import "./index.scss";
 
 function App() {
-  return <Layout>Hello world</Layout>;
+  return (
+    <Layout>
+      <Likes />
+    </Layout>
+  );
 }
 
 export default App;

@@ -1,0 +1,13 @@
+.titleLine {
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    z-index: 3;
+  }
+  &__line {
+    margin-top: -24px;
+    margin-bottom: 48px;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,17 @@
+.button {
+  border-radius: 0px;
+  padding: 12px 32px 12px 32px;
+  box-shadow: 3px 3px 0px $primary;
+  background-color: $secondary;
+  border: 0;
+  color: $white;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all linear 0.1s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 6px 6px 0px $primary;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+}

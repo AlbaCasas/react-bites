@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedin className="layout__icon" />
+            <FaLinkedin className="layout__icon layout__icon--linkedin" />
           </a>
         </div>
       </header>

@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <header className="layout__header">
-        <Title>React Challenges</Title>
+        <Title>🚀 React Challenges</Title>
         <div className="layout__icons">
           <a
             href="https://github.com/AlbaCasas"

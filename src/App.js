@@ -1,11 +1,12 @@
 import Layout from "./components/Layout";
+import Likes from "./views/Likes";
 import "./index.scss";
 
 function App() {
   return (
-    <div>
-      <Layout>Hello world</Layout>
-    </div>
+    <Layout>
+      <Likes />
+    </Layout>
   );
 }
 

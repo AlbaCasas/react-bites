@@ -1,11 +1,12 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Title from "../Title";
 import "./Layout.scss";
 
 const Layout = ({ children }) => {
   return (
     <div className="layout">
       <header className="layout__header">
-        <h1 className="layout__title">React Challenges</h1>
+        <Title>React Challenges</Title>
         <div className="layout__icons">
           <FaGithub className="layout__icon layout__icon--github" />
           <FaLinkedin className="layout__icon" />

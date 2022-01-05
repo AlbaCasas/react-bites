@@ -1,6 +1,9 @@
-.home__links {
-  color: $primary;
-  &__links {
+.home {
+  &__link {
     color: $primary;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

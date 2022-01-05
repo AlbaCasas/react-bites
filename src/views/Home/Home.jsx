@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import TitleLine from "../../components/TitleLine/TitleLine";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <TitleLine className="likes__title">Home</TitleLine>
@@ -8,16 +10,11 @@ const Home = () => {
         👋 Hello! I'm Alba Casas. This is a list of React challenges I have
         completed so far:
       </p>
-      <li className="home__list">
-        <a
-          className="home__links"
-          href="http://localhost:3000/likes"
-          target="_blank"
-          rel="noreferrer"
-        >
+      <ul>
+        <li onClick={() => navigate("/likes")} className="home__link">
           Likes counter
-        </a>
-      </li>
+        </li>
+      </ul>
     </div>
   );
 };

@@ -20,12 +20,9 @@
   }
 
   &__icon {
-    width: 32px;
-    height: 32px;
-    transition: all linear 0.1s;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.1);
+    * {
+      width: 32px;
+      height: 32px;
     }
 
     &--github {
@@ -46,5 +43,27 @@
   }
   &__main {
     width: 800px;
+  }
+}
+
+@media (max-width: $media-mobile) {
+  .layout {
+    &__header {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 32px;
+      padding: 32px 16px;
+    }
+    &__title {
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    &__icon--github {
+      margin-right: 32px;
+    }
+    &__main {
+      width: 100%;
+      padding: 0px 32px;
+    }
   }
 }

@@ -1,0 +1,15 @@
+.clickable {
+  transition: all linear 0.1s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.color-highlight {
+  color: $highlight;
+}

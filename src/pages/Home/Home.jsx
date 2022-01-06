@@ -19,6 +19,9 @@ const Home = () => {
         <li onClick={() => navigate("/likes")} className="home__link">
           Likes counter
         </li>
+        <li onClick={() => navigate("/sum")} className="home__link">
+          Sum Numbers
+        </li>
       </ul>
     </div>
   );

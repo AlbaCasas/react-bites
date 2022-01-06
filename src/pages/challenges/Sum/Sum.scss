@@ -1,9 +1,14 @@
 .sum {
   &__element {
     margin-right: 16px;
+    &--symbol {
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
   &__operation {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 }

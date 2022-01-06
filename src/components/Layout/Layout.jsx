@@ -15,18 +15,20 @@ const Layout = ({ children }) => {
         </Title>
         <div className="layout__icons">
           <a
+            className="layout__icon layout__icon--github clickable"
             href="https://github.com/AlbaCasas"
             target="_blank"
             rel="noreferrer"
           >
-            <FaGithub className="layout__icon layout__icon--github clickable" />
+            <FaGithub />
           </a>
           <a
+            className="layout__icon layout__icon--linkedin clickable"
             href="https://www.linkedin.com/in/alba-casas/"
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedin className="layout__icon layout__icon--linkedin clickable" />
+            <FaLinkedin />
           </a>
         </div>
       </header>

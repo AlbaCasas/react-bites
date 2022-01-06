@@ -1,9 +1,22 @@
 .home {
+  &__title {
+    margin-bottom: 40px;
+  }
+  &__text {
+    margin-bottom: 24px;
+  }
   &__link {
-    color: $primary;
+    color: $secondary;
     cursor: pointer;
+    transition: all 0.1s linear;
+    width: fit-content;
+    border-bottom: 1px solid $secondary;
+    margin-bottom: 12px;
+
     &:hover {
-      text-decoration: underline;
+      font-weight: bold;
+
+      border-bottom: 3px solid $primary;
     }
   }
 }

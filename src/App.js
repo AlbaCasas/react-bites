@@ -1,29 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Likes from "./views/Likes";
-import Home from "./views/Home";
-import Layout from "./components/Layout/Layout";
+import Likes from "./challenges/Likes";
+import Home from "./home/Home";
 import "./index.scss";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          }
-        />
-        <Route
-          path="/likes"
-          element={
-            <Layout>
-              <Likes />
-            </Layout>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/likes" element={<Likes />} />
       </Routes>
     </BrowserRouter>
   );

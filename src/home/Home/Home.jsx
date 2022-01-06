@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import TitleLine from "../../components/TitleLine/TitleLine";
+import Layout from "../../commons/components/Layout/Layout";
+import TitleLine from "../../commons/components/TitleLine/TitleLine";
 
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <Layout>
       <TitleLine className="likes__title">Home</TitleLine>
       <p className="likes__text">
         👋 Hello! I'm Alba Casas. This is a list of React challenges I have
@@ -15,7 +16,7 @@ const Home = () => {
           Likes counter
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 };
 

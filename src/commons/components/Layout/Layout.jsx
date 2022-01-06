@@ -1,13 +1,10 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { FaArrowLeft, FaGithub, FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Title from "../Title";
 
-const HOME_ROUTE = "/";
 const Layout = ({ children }) => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-  const shouldShowBackButton = pathname !== HOME_ROUTE;
-  const handleTitleClick = () => navigate(HOME_ROUTE);
+  const handleTitleClick = () => navigate("/");
   return (
     <div className="layout">
       <header className="layout__header">
@@ -20,26 +17,18 @@ const Layout = ({ children }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <FaGithub className="layout__icon layout__icon--github" />
+            <FaGithub className="layout__icon layout__icon--github clickable" />
           </a>
           <a
             href="https://www.linkedin.com/in/alba-casas/"
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedin className="layout__icon layout__icon--linkedin" />
+            <FaLinkedin className="layout__icon layout__icon--linkedin clickable" />
           </a>
         </div>
       </header>
-      <main className="layout__main">
-        {shouldShowBackButton && (
-          <FaArrowLeft
-            className="layout__icon layout__icon--back"
-            onClick={() => navigate(HOME_ROUTE)}
-          />
-        )}
-        {children}
-      </main>
+      <main className="layout__main">{children}</main>
     </div>
   );
 };

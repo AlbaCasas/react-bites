@@ -1,0 +1,9 @@
+.sum {
+  &__element {
+    margin-right: 16px;
+  }
+  &__operation {
+    display: flex;
+    align-items: center;
+  }
+}

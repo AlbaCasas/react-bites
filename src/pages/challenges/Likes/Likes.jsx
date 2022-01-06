@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TitleLine from "../../../components/TitleLine/TitleLine";
 import Button from "../../../components/Button";
+import Challenge from "../../../components/Challenge";
 
 const Likes = () => {
   const [counter, setCounter] = useState(0);
@@ -9,10 +9,9 @@ const Likes = () => {
   };
   return (
     <div>
-      <TitleLine className="likes__title">Likes</TitleLine>
-      <p className="likes__text">
-        Increment the number of likes by clicking on the button.
-      </p>
+      <Challenge title="Likes">
+        Increment the number of likes clicking in the button
+      </Challenge>
       <Button onClick={handleClick}>{counter} Likes</Button>
     </div>
   );

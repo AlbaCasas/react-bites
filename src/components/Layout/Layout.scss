@@ -22,11 +22,6 @@
   &__icon {
     width: 32px;
     height: 32px;
-    transition: all linear 0.1s;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.1);
-    }
 
     &--github {
       margin-right: 32px;

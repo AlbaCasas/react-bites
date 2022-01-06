@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Likes from "./views/Likes";
-import Home from "./views/Home";
-import Layout from "./components/Layout/Layout";
+import Likes from "./pages/challenges/Likes";
+import Home from "./pages/Home";
+import Layout from "./components/Layout";
 import "./index.scss";
 
 function App() {

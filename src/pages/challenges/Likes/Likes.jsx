@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TitleLine from "../../components/TitleLine/TitleLine";
-import Button from "../../components/Button";
+import TitleLine from "../../../components/TitleLine/TitleLine";
+import Button from "../../../components/Button";
 
 const Likes = () => {
   const [counter, setCounter] = useState(0);

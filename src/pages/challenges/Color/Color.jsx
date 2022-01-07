@@ -33,7 +33,13 @@ const Color = () => {
         you write an invalid color, the input will show the helper text: “Enter
         red, green or blue”
       </Challenge>
-      <div className="color__solution">
+      <form
+        className="color__solution"
+        onSubmit={(e) => {
+          e.preventDefault();
+          setInput(e.target[0].value);
+        }}
+      >
         <Input
           onBlur={(e) => {
             setInput(e.target.value);
@@ -42,7 +48,7 @@ const Color = () => {
           placeholder="Write red, green or blue"
         />
         <div className={`color__box ${getColor(input)}`} />
-      </div>
+      </form>
     </div>
   );
 };

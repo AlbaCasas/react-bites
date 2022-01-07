@@ -23,7 +23,8 @@ function getError(input) {
 }
 
 const Color = () => {
-  const [input, setInput] = useState(null);
+  const [input, setInput] = useState("");
+  const lowerCaseInput = input.toLowerCase();
 
   return (
     <div>
@@ -44,10 +45,10 @@ const Color = () => {
           onBlur={(e) => {
             setInput(e.target.value);
           }}
-          error={getError(input)}
+          error={getError(lowerCaseInput)}
           placeholder="Write red, green or blue"
         />
-        <div className={`color__box ${getColor(input)}`} />
+        <div className={`color__box ${getColor(lowerCaseInput)}`} />
       </form>
     </div>
   );

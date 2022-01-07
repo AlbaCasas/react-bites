@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Select from "../../components/Select";
 import TitleLine from "../../components/TitleLine/TitleLine";
 
 const Home = () => {

@@ -4,6 +4,7 @@ import Likes from "./pages/challenges/Likes";
 import Sum from "./pages/challenges/Sum";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
+import Color from "./pages/challenges/Color";
 import "./index.scss";
 
 function App() {
@@ -39,6 +40,14 @@ function App() {
           element={
             <Layout>
               <Calculator />
+            </Layout>
+          }
+        />
+        <Route
+          path="/color"
+          element={
+            <Layout>
+              <Color />
             </Layout>
           }
         />

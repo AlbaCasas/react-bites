@@ -27,9 +27,6 @@ const Home = () => {
           Button Calculator
         </li>
       </ul>
-      <Select>
-        <option>test</option>
-      </Select>
     </div>
   );
 };

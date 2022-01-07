@@ -1,0 +1,17 @@
+.calculator {
+  &__operation {
+    display: flex;
+    align-items: center;
+  }
+  &__select {
+    width: 32px;
+    height: 28px;
+    margin-right: 16px;
+  }
+  &__button {
+    margin-right: 16px;
+  }
+  &__equals {
+    margin-right: 16px;
+  }
+}

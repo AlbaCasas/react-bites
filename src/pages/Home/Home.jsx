@@ -17,10 +17,13 @@ const Home = () => {
       </p>
       <ul>
         <li onClick={() => navigate("/likes")} className="home__link">
-          Likes counter
+          Likes Counter
         </li>
         <li onClick={() => navigate("/sum")} className="home__link">
           Sum Numbers
+        </li>
+        <li onClick={() => navigate("/calculator")} className="home__link">
+          Button Calculator
         </li>
       </ul>
     </div>

@@ -3,31 +3,37 @@ import Button from "../../../components/Button";
 import Challenge from "../../../components/Challenge";
 import Title from "../../../components/Title";
 
-function getOperation(num1, num2, operator) {
-  if (operator === "+") {
-    return num1 + num2;
-  } else if (operator === "-") {
-    return num1 - num2;
-  } else if (operator === "*") {
-    return num1 * num2;
+function calculate(num1, num2, operator) {
+  switch (operator) {
+    case "plus":
+      return num1 + num2;
+    case "minus":
+      return num1 - num2;
+    case "multiplication":
+      return num1 * num2;
+    case "division":
+      return Math.round((num1 / num2) * 10) / 10;
+    default:
+      return 0;
   }
-  return num1 / num2;
 }
-console.log(getOperation());
+
 const Calculator = () => {
   const [counter, setCounter] = useState(0);
   const [counter2, setCounter2] = useState(0);
-
   const [operation, setOperation] = useState("plus");
+
+  const result = calculate(counter, counter2, operation);
 
   return (
     <div>
-      <Challenge title="Simple Calculator">
+      <Challenge title="Button Calculator">
         Select an operation by using the dropdown. Increment the numbers by
         clicking on the buttons. The result of the operation will be displayed.
       </Challenge>
-      <div>
+      <div className="calculator__operation">
         <Button
+          className="calculator__button"
           onClick={() => {
             setCounter(counter + 1);
           }}
@@ -35,6 +41,7 @@ const Calculator = () => {
           {counter}
         </Button>
         <select
+          className="calculator__select"
           name="operator"
           value={operation}
           onChange={(e) => {
@@ -47,14 +54,15 @@ const Calculator = () => {
           <option value="division">÷</option>
         </select>
         <Button
+          className="calculator__button"
           onClick={() => {
             setCounter2(counter2 + 1);
           }}
         >
           {counter2}
         </Button>
-        <span>=</span>
-        <Title></Title>
+        <span className="calculator__equals">=</span>
+        <Title>{result}</Title>
       </div>
     </div>
   );

@@ -5,6 +5,15 @@
     background: $gray;
     box-shadow: 3px 3px 0px $highlight;
     margin-left: 24px;
+    &--red {
+      background: red;
+    }
+    &--blue {
+      background: blue;
+    }
+    &--green {
+      background: green;
+    }
   }
   &__solution {
     display: flex;

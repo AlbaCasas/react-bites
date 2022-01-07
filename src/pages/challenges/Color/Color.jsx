@@ -2,6 +2,19 @@ import { useState } from "react/cjs/react.development";
 import Challenge from "../../../components/Challenge";
 import Input from "../../../components/Input";
 
+function getColor(input) {
+  if (input === "red") {
+    return "color__box--red";
+  }
+  if (input === "blue") {
+    return "color__box--blue";
+  }
+  if (input === "green") {
+    return "color__box--green";
+  }
+  return null;
+}
+
 function getError(input) {
   if (!input || input === "red" || input === "green" || input === "blue") {
     return null;
@@ -28,7 +41,7 @@ const Color = () => {
           error={getError(input)}
           placeholder="Write red, green or blue"
         />
-        <div className="color__box" />
+        <div className={`color__box ${getColor(input)}`} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../../../components/Button";
 import Challenge from "../../../components/Challenge";
+import Select from "../../../components/Select";
 import Title from "../../../components/Title";
 
 function calculate(num1, num2, operator) {
@@ -40,7 +41,7 @@ const Calculator = () => {
         >
           {counter}
         </Button>
-        <select
+        <Select
           className="calculator__select"
           name="operator"
           value={operation}
@@ -52,7 +53,7 @@ const Calculator = () => {
           <option value="minus">-</option>
           <option value="multiplication">*</option>
           <option value="division">÷</option>
-        </select>
+        </Select>
         <Button
           className="calculator__button"
           onClick={() => {

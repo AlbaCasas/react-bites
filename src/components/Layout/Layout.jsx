@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
     <div className="layout">
       <header className="layout__header">
         <Title className="layout__title" onClick={() => navigate("/")}>
-          🚀 React Challenges
+          🚀 React Bites
         </Title>
         <div className="layout__icons">
           <a

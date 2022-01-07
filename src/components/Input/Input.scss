@@ -1,4 +1,5 @@
 .input {
+  outline: none;
   min-width: 240px;
   font-size: 14px;
   padding: 14px 16px;
@@ -6,14 +7,11 @@
   border: none;
   background-color: $white;
   &--error {
-    border: none;
-    background-color: $white;
-    min-width: 240px;
-    font-size: 14px;
-    padding: 14px 16px;
     box-shadow: 3px 3px 0px $primary;
   }
 }
 .text--error {
+  margin-top: 8px;
   color: $primary;
+  font-size: 14px;
 }

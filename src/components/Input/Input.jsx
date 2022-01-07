@@ -2,7 +2,7 @@ const Input = ({ placeholder, className = "", error }) => {
   return (
     <div>
       <input
-        className={error ? `input--error` : `input`}
+        className={`input ${error ? "input--error" : ""}`}
         placeholder={placeholder}
       />
       <p className="text--error">{error}</p>

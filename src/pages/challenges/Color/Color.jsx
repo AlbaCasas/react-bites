@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import Challenge from "../../../components/Challenge";
 import Input from "../../../components/Input";
 

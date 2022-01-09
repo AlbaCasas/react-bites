@@ -31,6 +31,10 @@
   &__card {
     margin-bottom: 16px;
   }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: $media-mobile) {

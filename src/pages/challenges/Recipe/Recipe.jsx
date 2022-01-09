@@ -1,5 +1,6 @@
 import { FaPlusCircle } from "react-icons/fa";
 import Button from "../../../components/Button/Button";
+import Card from "../../../components/Card/Card";
 import Challenge from "../../../components/Challenge";
 import Input from "../../../components/Input/Input";
 import Select from "../../../components/Select/Select";
@@ -30,6 +31,9 @@ const Recipe = () => {
             <FaPlusCircle className="recipe__icon--faPlusCircle" />
           </Button>
         </form>
+        <Card className="recipe__card">200gr - Pepperoni</Card>
+        <Card className="recipe__card">100gr - Tomato</Card>
+        <Card className="recipe__card">300gr - Wheat</Card>
       </div>
     </div>
   );

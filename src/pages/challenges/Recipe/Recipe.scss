@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: fit-content;
+    width: 620px;
   }
   &__form {
     margin-bottom: 32px;
@@ -28,40 +28,66 @@
     width: 24px;
     height: 24px;
   }
-  &__card {
-    margin-bottom: 16px;
-  }
   &__wrapper {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+  }
+  &__card {
+    margin-bottom: 16px;
+    flex-basis: calc(50% - 16px);
+    flex-grow: 1;
+    &:nth-child(odd) {
+      margin-right: 8px;
+    }
+    &:nth-child(even) {
+      margin-left: 8px;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+    &--secondary {
+      border-bottom: 3px solid $secondary;
+    }
+    &--primary {
+      border-bottom: 3px solid $primary;
+    }
+    &--highlight {
+      border-bottom: 3px solid $highlight;
+    }
   }
 }
 
 @media (max-width: $media-mobile) {
   .recipe {
     &__result {
-      flex-direction: column;
-      width: 100%;
       align-items: center;
+      width: 100%;
     }
     &__form {
       width: fit-content;
       justify-content: flex-start;
-      display: flex;
       flex-wrap: wrap;
+      margin-bottom: 16px;
     }
     &__input {
-      max-width: 240px;
       margin-right: 16px;
       margin-bottom: 16px;
+      flex-grow: 1;
     }
     &__select {
-      max-width: 240px;
+      margin-right: 16px;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    &__button {
       margin-right: 16px;
       margin-bottom: 16px;
     }
-    &__button {
-      max-width: fit-content;
+    &__card {
+      text-align: center;
+      height: fit-content;
+      padding: 16px;
     }
   }
 }

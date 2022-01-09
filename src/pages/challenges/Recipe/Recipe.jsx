@@ -7,8 +7,27 @@ import Input from "../../../components/Input/Input";
 import Select from "../../../components/Select/Select";
 
 const Recipe = () => {
+  const [cards, setCards] = useState([]);
+  console.log({ cards });
   const [inputError, setInputError] = useState(null);
   const [selectError, setSelectError] = useState(null);
+
+  const addCard = (weight, ingredient) => {
+    const classesList = [
+      "recipe__card--primary",
+      "recipe__card--secondary",
+      "recipe__card--highlight",
+    ];
+    const randomIndex = Math.floor(Math.random() * 3);
+    setCards([
+      ...cards,
+      {
+        weight,
+        ingredient,
+        className: classesList[randomIndex],
+      },
+    ]);
+  };
 
   const handleInputBlur = (e) => {
     if (isNaN(e.target.value)) {
@@ -26,12 +45,15 @@ const Recipe = () => {
     e.preventDefault();
     if (e.target[0].value === "") {
       setInputError("Enter a number");
+      return;
     }
     if (e.target[1].value === "Ingredient") {
       setSelectError("Select one ingredient");
+      return;
     } else {
       setSelectError(null);
     }
+    addCard(e.target[0].value, e.target[1].value);
   };
 
   return (
@@ -71,7 +93,15 @@ const Recipe = () => {
             <FaPlusCircle className="recipe__icon--faPlusCircle" />
           </Button>
         </form>
-        <div className="recipe__wrapper"></div>
+        <div className="recipe__wrapper">
+          {cards.map((card) => {
+            return (
+              <Card className={`recipe__card ${card.className}`}>
+                <strong>{card.weight}</strong> {card.ingredient}
+              </Card>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

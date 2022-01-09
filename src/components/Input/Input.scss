@@ -1,7 +1,9 @@
 .input-box {
+  min-width: 240px;
+
   &__input {
+    width: 100%;
     outline: none;
-    min-width: 240px;
     font-size: 14px;
     padding: 14px 16px;
     box-shadow: 3px 3px 0px $secondary;

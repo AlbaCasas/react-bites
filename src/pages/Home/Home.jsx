@@ -28,6 +28,9 @@ const Home = () => {
         <li onClick={() => navigate("/color")} className="home__link">
           Type a Color
         </li>
+        <li onClick={() => navigate("/recipe")} className="home__link">
+          Recipe
+        </li>
       </ul>
     </div>
   );

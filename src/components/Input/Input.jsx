@@ -1,6 +1,6 @@
-const Input = ({ placeholder, testId = "", error, onBlur }) => {
+const Input = ({ placeholder, testId = "", error, onBlur, className = "" }) => {
   return (
-    <div>
+    <div className={className}>
       <input
         className={`input ${error ? "input--error" : ""}`}
         placeholder={placeholder}

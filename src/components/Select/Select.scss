@@ -1,8 +1,10 @@
 .select {
-  padding: 4px;
   border: 0;
   box-shadow: 3px 3px 0 $secondary;
   outline: none;
   font-size: 18px;
   background-color: $white;
+  color: $background;
+  padding: 14px 16px;
+  height: 48px;
 }

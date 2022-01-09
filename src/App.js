@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import Color from "./pages/challenges/Color";
 import "./index.scss";
+import Recipe from "./pages/challenges/Recipe/Recipe";
 
 function App() {
   return (
@@ -48,6 +49,14 @@ function App() {
           element={
             <Layout>
               <Color />
+            </Layout>
+          }
+        />
+        <Route
+          path="/recipe"
+          element={
+            <Layout>
+              <Recipe />
             </Layout>
           }
         />

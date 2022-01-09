@@ -1,13 +1,13 @@
 const Input = ({ placeholder, testId = "", error, onBlur, className = "" }) => {
   return (
-    <div className={className}>
+    <div className={`input-box ${className}`}>
       <input
-        className={`input ${error ? "input--error" : ""}`}
+        className={`input-box__input ${error ? "input-box__input--error" : ""}`}
         placeholder={placeholder}
         onBlur={onBlur}
         data-testid={testId}
       />
-      <p className="text--error">{error}</p>
+      {error && <p className="input-box__text ">{error}</p>}
     </div>
   );
 };

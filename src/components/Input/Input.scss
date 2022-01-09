@@ -1,19 +1,21 @@
-.input {
-  outline: none;
-  min-width: 240px;
-  font-size: 14px;
-  padding: 14px 16px;
-  box-shadow: 3px 3px 0px $secondary;
-  border: none;
-  background-color: $white;
-  height: 48px;
-  &--error {
-    box-shadow: 3px 3px 0px $primary;
+.input-box {
+  &__input {
+    outline: none;
+    min-width: 240px;
+    font-size: 14px;
+    padding: 14px 16px;
+    box-shadow: 3px 3px 0px $secondary;
+    border: none;
+    background-color: $white;
+    height: 48px;
+    &--error {
+      box-shadow: 3px 3px 0px $primary;
+    }
   }
-}
 
-.text--error {
-  margin-top: 8px;
-  color: $primary;
-  font-size: 14px;
+  &__text {
+    font-size: 14px;
+    margin-top: 8px;
+    color: $primary;
+  }
 }

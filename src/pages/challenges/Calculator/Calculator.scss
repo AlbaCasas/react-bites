@@ -5,6 +5,13 @@
   }
   &__select {
     margin-right: 24px;
+
+    select {
+      min-width: 32px;
+      font-size: 18px;
+      height: fit-content;
+      padding: 4px;
+    }
   }
   &__button {
     margin-right: 24px;
@@ -13,5 +20,26 @@
     font-size: 18px;
     font-weight: bold;
     margin-right: 24px;
+  }
+}
+
+@media (max-width: $media-mobile) {
+  .calculator {
+    &__operation {
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__select {
+      margin-right: 16px;
+    }
+
+    &__button {
+      margin-right: 16px;
+    }
+
+    &__equals {
+      margin-right: 16px;
+    }
   }
 }

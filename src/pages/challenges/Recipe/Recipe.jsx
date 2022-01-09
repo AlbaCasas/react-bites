@@ -1,19 +1,38 @@
 import { FaPlusCircle } from "react-icons/fa";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import Button from "../../../components/Button/Button";
 import Card from "../../../components/Card/Card";
 import Challenge from "../../../components/Challenge";
 import Input from "../../../components/Input/Input";
 import Select from "../../../components/Select/Select";
 
-function getError(input) {
-  if (!isNaN(input)) {
-    return null;
-  }
-  return "Enter a number";
-}
 const Recipe = () => {
-  const [input, setInput] = useState("");
+  const [inputError, setInputError] = useState(null);
+  const [selectError, setSelectError] = useState(null);
+
+  const handleInputBlur = (e) => {
+    if (isNaN(e.target.value)) {
+      setInputError("Enter a number");
+    } else {
+      setInputError(null);
+    }
+  };
+
+  const handleSelectChange = () => {
+    setSelectError(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (e.target[0].value === "") {
+      setInputError("Enter a number");
+    }
+    if (e.target[1].value === "Ingredient") {
+      setSelectError("Select one ingredient");
+    } else {
+      setSelectError(null);
+    }
+  };
 
   return (
     <div>
@@ -22,28 +41,19 @@ const Recipe = () => {
         ingredients will be added to the recipe below.
       </Challenge>
       <div className="recipe__result">
-        <form
-          className="recipe__form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setInput(e.target[0].value);
-          }}
-        >
+        <form className="recipe__form" onSubmit={handleSubmit}>
           <Input
-            onBlur={(e) => {
-              setInput(e.target.value);
-            }}
+            onBlur={handleInputBlur}
+            error={inputError}
             className="recipe__input"
             placeholder="Weight (grs.)"
-            error={getError(input)}
           />
           <Select
             className="recipe__select"
-            error="Please select an ingredient"
+            onChange={handleSelectChange}
+            error={selectError}
           >
-            <option disabled selected>
-              Ingredient
-            </option>
+            <option selected>Ingredient</option>
             <option value="pepperoni">Pepperoni</option>
             <option value="tomato">Tomato</option>
             <option value="wheat">Wheat</option>

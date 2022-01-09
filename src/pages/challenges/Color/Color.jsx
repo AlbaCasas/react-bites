@@ -16,15 +16,24 @@ function getColor(input) {
 }
 
 function getError(input) {
-  if (!input || input === "red" || input === "green" || input === "blue") {
+  if (input === "red" || input === "green" || input === "blue") {
     return null;
   }
   return "Enter red, green or blue";
 }
 
 const Color = () => {
-  const [input, setInput] = useState("");
-  const lowerCaseInput = input.toLowerCase();
+  const [colorClassName, setColorClassName] = useState("");
+  const [inputError, setInputError] = useState("");
+
+  const updateColorClassName = (inputValue) => {
+    const error = getError(inputValue.toLowerCase());
+    setInputError(error);
+    if (!error) {
+      const className = getColor(inputValue.toLowerCase());
+      setColorClassName(className);
+    }
+  };
 
   return (
     <div>
@@ -38,17 +47,15 @@ const Color = () => {
         className="color__solution"
         onSubmit={(e) => {
           e.preventDefault();
-          setInput(e.target[0].value);
+          updateColorClassName(e.target[0].value);
         }}
       >
         <Input
-          onBlur={(e) => {
-            setInput(e.target.value);
-          }}
-          error={getError(lowerCaseInput)}
+          onBlur={(e) => updateColorClassName(e.target.value)}
+          error={inputError}
           placeholder="Write red, green or blue"
         />
-        <div className={`color__box ${getColor(lowerCaseInput)}`} />
+        <div className={`color__box ${colorClassName}`} />
       </form>
     </div>
   );

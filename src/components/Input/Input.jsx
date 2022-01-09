@@ -1,11 +1,4 @@
-const Input = ({
-  placeholder,
-  testId = "",
-  error,
-  onBlur,
-  className = "",
-  onClick,
-}) => {
+const Input = ({ placeholder, testId = "", error, onBlur, className = "" }) => {
   return (
     <div className={`input-box ${className}`}>
       <input

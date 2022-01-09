@@ -6,9 +6,38 @@ import Challenge from "../../../components/Challenge";
 import Input from "../../../components/Input/Input";
 import Select from "../../../components/Select/Select";
 
+function validateSelect(value) {
+  if (value === "Ingredient") {
+    return "Please select an ingredient";
+  }
+  return null;
+}
+
+function validateInput(value) {
+  if (value === "" || isNaN(value)) {
+    return "Please enter a number";
+  }
+  return null;
+}
+
+const foodList = [
+  "Ingredient",
+  "Pepperoni",
+  "Tomato",
+  "Wheat",
+  "Onion",
+  "Bacon",
+  "Lettuce",
+  "Cheese",
+  "Avocado",
+  "Potato",
+  "Sugar",
+  "Ham",
+  "Chicken",
+];
+
 const Recipe = () => {
   const [cards, setCards] = useState([]);
-  console.log({ cards });
   const [inputError, setInputError] = useState(null);
   const [selectError, setSelectError] = useState(null);
 
@@ -30,11 +59,8 @@ const Recipe = () => {
   };
 
   const handleInputBlur = (e) => {
-    if (isNaN(e.target.value)) {
-      setInputError("Enter a number");
-    } else {
-      setInputError(null);
-    }
+    const error = validateInput(e.target.value);
+    setInputError(error);
   };
 
   const handleSelectChange = () => {
@@ -43,17 +69,13 @@ const Recipe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (e.target[0].value === "") {
-      setInputError("Enter a number");
-      return;
+    const inputError = validateInput(e.target[0].value);
+    const selectError = validateSelect(e.target[1].value);
+    setInputError(inputError);
+    setSelectError(selectError);
+    if (!inputError && !selectError) {
+      addCard(e.target[0].value, e.target[1].value);
     }
-    if (e.target[1].value === "Ingredient") {
-      setSelectError("Select one ingredient");
-      return;
-    } else {
-      setSelectError(null);
-    }
-    addCard(e.target[0].value, e.target[1].value);
   };
 
   return (
@@ -74,20 +96,11 @@ const Recipe = () => {
             className="recipe__select"
             onChange={handleSelectChange}
             error={selectError}
+            defaultValue="Ingredient"
           >
-            <option selected>Ingredient</option>
-            <option value="pepperoni">Pepperoni</option>
-            <option value="tomato">Tomato</option>
-            <option value="wheat">Wheat</option>
-            <option value="onion">Onion</option>
-            <option value="bacon">Bacon</option>
-            <option value="chesse">Chesse</option>
-            <option value="lettuce">Lettuce</option>
-            <option value="avocado">Avocado</option>
-            <option value="potato">potato</option>
-            <option value="sugar">sugar</option>
-            <option value="ham">Ham</option>
-            <option value="chicken">Chicken</option>
+            {foodList.map((food) => (
+              <option value={food}>{food}</option>
+            ))}
           </Select>
           <Button className="recipe__button">
             <FaPlusCircle className="recipe__icon--faPlusCircle" />
@@ -97,7 +110,8 @@ const Recipe = () => {
           {cards.map((card) => {
             return (
               <Card className={`recipe__card ${card.className}`}>
-                <strong>{card.weight}</strong> {card.ingredient}
+                <strong className="recipe__weight">{card.weight} gr</strong>-
+                <span className="recipe__ingredient">{card.ingredient}</span>
               </Card>
             );
           })}

@@ -1,4 +1,12 @@
-const Select = ({ children, className = "", name, value, onChange, error }) => {
+const Select = ({
+  children,
+  className = "",
+  name,
+  defaultValue,
+  value,
+  onChange,
+  error,
+}) => {
   return (
     <div className={`select-box ${className}`}>
       <select
@@ -7,6 +15,7 @@ const Select = ({ children, className = "", name, value, onChange, error }) => {
         }`}
         name={name}
         value={value}
+        defaultValue={defaultValue}
         onChange={onChange}
       >
         {children}

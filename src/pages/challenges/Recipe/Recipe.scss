@@ -56,6 +56,13 @@
       border-bottom: 3px solid $highlight;
     }
   }
+  &__weight {
+    margin-right: 4px;
+    font-weight: bold;
+  }
+  &__ingredient {
+    margin-left: 4px;
+  }
 }
 
 @media (max-width: $media-mobile) {
